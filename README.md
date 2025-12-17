@@ -1,36 +1,274 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Weather Application 🌤️
 
-## Getting Started
+A modern, fast, and user-friendly weather application designed to deliver accurate forecasts with a clean UI, elegant animations, and responsive design. This app focuses on simplicity, speed, and visual experience while offering meaningful weather insights for everyday use.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📌 Project Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Purpose:**  
+To provide real-time and forecasted weather information through a clean and interactive interface that is fast, responsive, and visually appealing.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**Target Audience:**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+-   Daily commuters
+-   Outdoor enthusiasts
+-   Travelers
+-   Anyone who wants a fast and elegant weather experience
 
-## Learn More
+**Core Value Proposition:**
 
-To learn more about Next.js, take a look at the following resources:
+-   Minimalist and distraction-free UI
+-   Animated weather-based backgrounds
+-   Hyper-local weather updates
+-   Offline caching of the last viewed data
+-   Cross-platform compatibility (Web & Mobile ready)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🚀 Features
 
-## Deploy on Vercel
+### ✅ MVP Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-   Current weather display
+-   Hourly forecast (24 hours)
+-   7-day forecast
+-   Location search and save
+-   Temperature unit switching (°C/°F)
+-   Wind speed unit switching
+-   Offline cached data
+-   Basic push notifications
+-   PWA support
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 🔜 Advanced Features
+
+-   Real-time alerts
+-   Radar maps
+-   Severe weather notifications
+-   Interactive weather charts
+-   Animation settings
+-   Widget support
+
+---
+
+## 🛠️ Technology Stack
+
+### Frontend
+
+-   Next.js (TypeScript)
+-   Tailwind CSS
+-   Framer Motion (animations)
+
+### Backend
+
+-   Node.js / FastAPI
+-   Redis (cache)
+-   MongoDB / PostgreSQL
+
+### APIs
+
+-   OpenWeatherMap
+-   AccuWeather / Weatherbit
+-   Mapbox / Google Maps (geocoding)
+
+---
+
+## 📐 UI & Experience Philosophy
+
+-   Minimal layout with bold typography
+-   Dynamic background based on weather & time
+-   Micro-animations to enhance user feedback
+-   Accessibility first design
+-   Dark mode support
+-   Mobile-first layout
+
+---
+
+## 🏃 Development Workflow (Agile)
+
+1. Planning & Requirement Analysis
+2. UI & UX Design
+3. Sprint-based Development
+4. Testing & QA
+5. Optimization
+6. Production Release
+
+---
+
+## 📁 Project Structure
+
+/src
+/components
+/pages
+/utils
+/hooks
+/public
+/assets
+/docs
+
+---
+
+## ♿ Accessibility
+
+-   Dynamic text scaling
+-   High contrast colors
+-   Keyboard navigation
+-   Screen reader support
+-   Reduced motion preference
+
+---
+
+## 📃 License
+
+This project is open-source and free to use for learning and development purposes.
+
+---
+
+## ✨ Author
+
+Built and maintained by Sajjadul Islam.
+
+## Wireframe
+
+┌────────────────────────────────────┐
+│ 📍 Location Name ⚙️ 🔍 │
+├────────────────────────────────────┤
+│ |
+│ 26°C |
+│ ☀ Sunny |
+│ Feels Like 28°C |
+│ |
+│ Humidity Wind Pressure |
+│ 66% 12 km/h 1014hPa |
+│ |
+├────────────────────────────────────┤
+│ Hourly Forecast → |
+│ ┌────┐ ┌────┐ ┌────┐ ┌────┐ |
+│ │ 1PM│ │ 2PM│ │ 3PM│ │ 4PM│ |
+│ │ ☀ │ │ ☁ │ │ 🌧 │ │ 🌧 │ |
+│ │ 26 │ │ 25 │ │ 24 │ │ 24 │ |
+│ └────┘ └────┘ └────┘ └────┘ |
+├────────────────────────────────────┤
+│ 7-Day Forecast ↓ |
+│ Mon ☀ 27° / 20° |
+│ Tue 🌧 25° / 19° |
+│ Wed ☁ 24° / 18° |
+└────────────────────────────────────┘
+
+┌─────────────────────────────────────┐
+│ 🔍 Search city or place │
+├─────────────────────────────────────┤
+│ 📍 Use Current Location │
+│ │
+│ Recent Searches │
+│ --------------------------------- │
+│ • Dhaka │
+│ • Chittagong │
+│ • New York │
+│ │
+│ Suggestions │
+│ --------------------------------- │
+│ • London │
+│ • Tokyo │
+│ • Paris │
+└─────────────────────────────────────┘
+
+┌───────────────────────────────────┐
+│ ← Tuesday Forecast │
+├───────────────────────────────────┤
+│ 🌧 Rainy │
+│ Max 26° / Min 18° │
+│ │
+│ Sunrise: 5:45 AM │
+│ Sunset: 6:37 PM │
+│ Wind: 10 km/h │
+│ Humidity: 70% │
+│ UV Index: High │
+│ │
+│ ─── Precipitation chart here ─── │
+│ ─── Temperature graph here ─── │
+└───────────────────────────────────┘
+
+┌────────────────────────────┐
+│ ⚙️ Settings │
+├────────────────────────────┤
+│ Temperature Unit │
+│ (o) Celsius ( ) Fahrenheit │
+│ │
+│ Wind Speed │
+│ (o) km/h ( ) mph │
+│ │
+│ Notifications │
+│ [x] Rain Alert │
+│ [ ] Storm Alert │
+│ │
+│ Accessibility │
+│ [ ] Reduce Motion │
+│ [x] High Contrast Mode │
+└────────────────────────────┘
+
+┌────────────────────────────┐
+│ 📍 Saved Locations |
+├────────────────────────────┤
+│ ★ Dhaka │
+│ Chittagong │
+│ Cox's Bazar │
+│ │
+│ [+] Add Location │
+└────────────────────────────┘
+
+## 📁 Folder structure
+
+/src
+├── app/
+│ ├── layout.tsx
+│ ├── page.tsx # Home
+│ ├── forecast/
+│ │ └── page.tsx
+│ ├── location/
+│ │ └── page.tsx
+│ ├── settings/
+│ │ └── page.tsx
+│
+├── components/
+│ ├── ui/
+│ │ ├── Button.tsx
+│ │ ├── Card.tsx
+│ │ └── Toggle.tsx
+│ │
+│ ├── weather/
+│ │ ├── CurrentWeather.tsx
+│ │ ├── HourlyForecast.tsx
+│ │ ├── WeeklyForecast.tsx
+│ │
+│ ├── animations/
+│ │ ├── RainAnimation.tsx
+│ │ ├── SnowAnimation.tsx
+│ │ └── SunAnimation.tsx
+│
+│ ├── layout/
+│ │ ├── Header.tsx
+│ │ └── Navigation.tsx
+│
+├── hooks/
+│ ├── useWeather.ts
+│ └── useLocation.ts
+│
+├── services/
+│ ├── api.ts
+│ └── weather.service.ts
+│
+├── styles/
+│ └── globals.css
+│
+├── data/
+│ └── locations.ts
+│
+├── utils/
+│ └── formatters.ts
+│
+/public
+├── icons/
+├── images/
+├── lottie/
+/docs

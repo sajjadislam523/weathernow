@@ -29,7 +29,6 @@ function getUserLocation(): Promise<string> {
 
 const WeatherProvider = ({ children }: { children: React.ReactNode }) => {
     const [query, setQuery] = useState("Dhaka");
-    // const [weather, setWeather] = useState<WeatherResponse | null>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [currentWeather, setCurrentWeather] = useState<Current | null>(null);
@@ -71,7 +70,6 @@ const WeatherProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     const contextData = {
-        // weather,
         currentWeather,
         forecast,
         location,

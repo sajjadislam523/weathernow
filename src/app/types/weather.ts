@@ -87,6 +87,7 @@ export interface Hour {
     feelslike_c: number;
     chance_of_rain: number;
     air_quality: AirQuality;
+    time_epoch: number;
 }
 
 export interface Alerts {

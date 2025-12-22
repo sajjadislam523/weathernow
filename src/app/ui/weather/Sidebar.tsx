@@ -9,10 +9,6 @@ const Sidebar = () => {
     const { currentWeather, forecast, location, loading, setCity, error } =
         useWeather();
 
-    console.log("current weather", currentWeather);
-    console.log("Current location", location);
-    console.log("Current forecast", forecast);
-
     return (
         <aside className="h-full w-full flex flex-col gap-6 bg-black/30 backdrop-blur-lg border-r border-white/10 p-5 text-white">
             <CitySearch onSearch={setCity} />
@@ -40,9 +36,9 @@ const Sidebar = () => {
                         {currentWeather?.temp_c}°
                     </h1>
                 )}
-                <p className="text-sm uppercase text-blue-200">
+                {/* <p className="text-sm uppercase text-blue-200">
                     {currentWeather?.condition.text}
-                </p>
+                </p> */}
             </div>
 
             <div className="grid grid-cols-2 gap-4 text-sm mt-2">

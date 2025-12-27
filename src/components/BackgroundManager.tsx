@@ -1,6 +1,6 @@
 "use client";
 
-import useWeather from "@/app/hooks/useWeather";
+import useWeather from "@/hooks/useWeather";
 import { useEffect } from "react";
 
 const BackgroundManager = () => {

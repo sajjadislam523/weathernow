@@ -1,12 +1,11 @@
 "use client";
 
-import HourlyCard from "@/app/components/HourlyCard";
-import useWeather from "@/app/hooks/useWeather";
+import HourlyCard from "@/components/HourlyCard";
+import ToogleTemperature from "@/components/ToogleTemperature";
+import useWeather from "@/hooks/useWeather";
 
 export default function Home() {
     const { currentWeather, forecast } = useWeather();
-    console.log("Current forecast", forecast);
-
     const now = new Date();
 
     const day = now.getDate();
@@ -25,16 +24,19 @@ export default function Home() {
         .slice(0, 10);
 
     return (
-        <div className="flex flex-col justify-between h-full bg-black/30 backdrop-blur-xs md:p-12 p-6">
-            <div>
-                <h1>{combinedDateTime}</h1>
+        <div className="flex flex-col justify-between h-full bg-black/40 md:p-12 p-6">
+            <div className="flex items-center justify-between">
+                <h1 className="text-white">{combinedDateTime}</h1>
+                <div>
+                    <ToogleTemperature />
+                </div>
             </div>
 
-            <div>
-                <p className="text-6xl font-bold uppercase ">
+            <div className="space-y-8">
+                <p className="text-6xl font-bold uppercase text-white">
                     {currentWeather?.condition.text}
                 </p>
-                <div className="flex gap-4 overflow-x-auto scrollbar-hide">
+                <div className="flex gap-4 overflow-x-auto scrollbar-hide text-white">
                     {next10Hours?.map((hour) => (
                         <HourlyCard key={hour.time} hour={hour} />
                     ))}

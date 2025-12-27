@@ -1,8 +1,10 @@
 "use client";
 
-import { getWeatherData } from "@/app/lib/data";
-import { Current, Forecast, Location } from "@/app/types/weather";
+import { getWeatherData } from "@/lib/data";
+import { Current, Forecast, Location } from "@/types/weather";
 import { createContext, useEffect, useState } from "react";
+
+type TemperatureUnit = "celsius" | "fahrenheit";
 
 interface WeatherContextType {
     currentWeather: Current | null;
@@ -13,6 +15,9 @@ interface WeatherContextType {
     query: string;
     setCity: (q: string) => void;
     refresh: () => void;
+    toggleTemperatureUnit: () => void;
+    temperatureUnit: TemperatureUnit;
+    convertTemperature: (temp: number) => number;
 }
 
 export const WeatherContext = createContext<WeatherContextType | null>(null);
@@ -34,6 +39,8 @@ const WeatherProvider = ({ children }: { children: React.ReactNode }) => {
     const [currentWeather, setCurrentWeather] = useState<Current | null>(null);
     const [forecast, setForecast] = useState<Forecast | null>(null);
     const [location, setLocation] = useState<Location | null>(null);
+    const [temperatureUnit, setTemperatureUnit] =
+        useState<TemperatureUnit>("celsius");
 
     const fetchWeather = async (q: string) => {
         try {
@@ -43,7 +50,6 @@ const WeatherProvider = ({ children }: { children: React.ReactNode }) => {
             setCurrentWeather(data.current);
             setForecast(data.forecast);
             setLocation(data.location);
-            // setWeather(data);
         } catch (err) {
             setError(err as string);
         } finally {
@@ -64,6 +70,31 @@ const WeatherProvider = ({ children }: { children: React.ReactNode }) => {
         detectLocation();
     }, []);
 
+    // Load temperature preference from localStorage
+    useEffect(() => {
+        const savedUnit = localStorage.getItem(
+            "temperatureUnit"
+        ) as TemperatureUnit;
+        if (savedUnit) {
+            setTemperatureUnit(savedUnit);
+        }
+    }, []);
+
+    const toggleTemperatureUnit = () => {
+        setTemperatureUnit((prev) => {
+            const newUnit = prev === "celsius" ? "fahrenheit" : "celsius";
+            localStorage.setItem("temperatureUnit", newUnit);
+            return newUnit;
+        });
+    };
+
+    const convertTemperature = (celsius: number): number => {
+        if (temperatureUnit === "fahrenheit") {
+            return Math.round((celsius * 9) / 5 + 32);
+        }
+        return Math.round(celsius);
+    };
+
     const setCity = (city: string) => {
         setQuery(city);
         fetchWeather(city);
@@ -78,6 +109,9 @@ const WeatherProvider = ({ children }: { children: React.ReactNode }) => {
         query,
         setCity,
         refresh: () => fetchWeather(query),
+        temperatureUnit,
+        toggleTemperatureUnit,
+        convertTemperature,
     };
 
     return (

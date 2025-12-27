@@ -1,7 +1,8 @@
 "use client";
 
-import CitySearch from "@/app/components/CitySearch";
-import useWeather from "@/app/hooks/useWeather";
+import CitySearch from "@/components/CitySearch";
+import Temperature from "@/components/Temperature";
+import useWeather from "@/hooks/useWeather";
 import { motion } from "framer-motion";
 import { FiCompass, FiDroplet, FiEye, FiWind } from "react-icons/fi";
 
@@ -23,6 +24,10 @@ const Sidebar = () => {
                 />
             )}
 
+            {/* <div className="flex justify-end">
+                <ToogleTemperature />
+            </div> */}
+
             <div className="text-center">
                 <h2 className="text-xl font-semibold">{location?.name}</h2>
                 <p className="text-sm opacity-70">{location?.country}</p>
@@ -32,13 +37,12 @@ const Sidebar = () => {
                 {loading ? (
                     <p className="animate-pulse">Loading...</p>
                 ) : (
-                    <h1 className="text-5xl font-bold">
-                        {currentWeather?.temp_c}°
-                    </h1>
+                    currentWeather && (
+                        <div className="text-6xl font-bold">
+                            <Temperature value={currentWeather?.temp_c} />
+                        </div>
+                    )
                 )}
-                {/* <p className="text-sm uppercase text-blue-200">
-                    {currentWeather?.condition.text}
-                </p> */}
             </div>
 
             <div className="grid grid-cols-2 gap-4 text-sm mt-2">

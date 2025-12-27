@@ -1,4 +1,4 @@
-import { WeatherContext } from "@/app/provider/weatherProvider";
+import { WeatherContext } from "@/provider/weatherProvider";
 import { useContext } from "react";
 
 export default function useWeather() {

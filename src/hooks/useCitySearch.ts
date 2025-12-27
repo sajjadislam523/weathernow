@@ -1,4 +1,4 @@
-import { searchCities } from "@/app/lib/searchCities";
+import { searchCities } from "@/lib/searchCities";
 import { useEffect, useState } from "react";
 
 export default function useCitySearch(query: string) {

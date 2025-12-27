@@ -1,4 +1,4 @@
-import useCitySearch from "@/app/hooks/useCitySearch";
+import useCitySearch from "@/hooks/useCitySearch";
 import { useState } from "react";
 
 interface Props {

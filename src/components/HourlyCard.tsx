@@ -1,8 +1,8 @@
-import { Hour } from "@/app/types/weather";
+import { Hour } from "@/types/weather";
 
 const HourlyCard = ({ hour }: { hour: Hour }) => {
     return (
-        <div className="flex flex-col items-center gap-1 rounded-md p-2 bg-white/10 text-center">
+        <div className="flex flex-col items-center gap-1 rounded-md p-2 bg-white/10 backdrop-blur-xs text-center">
             <p className="text-sm opacity-70">{hour.time.split(" ")[1]}</p>
 
             <img

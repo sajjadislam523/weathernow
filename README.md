@@ -35,7 +35,6 @@ To provide real-time and forecasted weather information through a clean and inte
 -   7-day forecast
 -   Location search and save
 -   Temperature unit switching (°C/°F)
--   Wind speed unit switching
 -   Offline cached data
 -   Basic push notifications
 -   PWA support
@@ -58,12 +57,6 @@ To provide real-time and forecasted weather information through a clean and inte
 -   Next.js (TypeScript)
 -   Tailwind CSS
 -   Framer Motion (animations)
-
-### Backend
-
--   Node.js / FastAPI
--   Redis (cache)
--   MongoDB / PostgreSQL
 
 ### APIs
 

@@ -1,7 +1,7 @@
-import BackgroundManager from "@/app/components/BackgroundManager";
-import WeatherProvider from "@/app/provider/weatherProvider";
-import { inter } from "@/app/ui/fonts";
-import Sidebar from "@/app/ui/weather/Sidebar";
+import BackgroundManager from "@/components/BackgroundManager";
+import { inter } from "@/components/ui/fonts";
+import Sidebar from "@/components/ui/weather/Sidebar";
+import WeatherProvider from "@/provider/weatherProvider";
 import type { Metadata } from "next";
 import "./globals.css";
 

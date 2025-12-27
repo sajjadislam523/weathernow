@@ -1,4 +1,4 @@
-import { WeatherResponse } from "@/app/types/weather";
+import { WeatherResponse } from "@/types/weather";
 
 export async function getWeatherData(q: string): Promise<WeatherResponse> {
     const API_KEY = process.env.NEXT_PUBLIC_WEATHER_API;

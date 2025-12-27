@@ -1,7 +1,7 @@
 "use client";
 
 import HourlyCard from "@/components/HourlyCard";
-import ToogleTemperature from "@/components/ToogleTemperature";
+import Settings from "@/components/ui/Settings";
 import useWeather from "@/hooks/useWeather";
 
 export default function Home() {
@@ -28,7 +28,7 @@ export default function Home() {
             <div className="flex items-center justify-between">
                 <h1 className="text-white">{combinedDateTime}</h1>
                 <div>
-                    <ToogleTemperature />
+                    <Settings />
                 </div>
             </div>
 

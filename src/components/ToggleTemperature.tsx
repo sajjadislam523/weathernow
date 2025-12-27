@@ -1,6 +1,6 @@
 import useWeather from "@/hooks/useWeather";
 
-const ToogleTemperature = () => {
+const ToggleTemperature = () => {
     const { temperatureUnit, toggleTemperatureUnit } = useWeather();
 
     return (
@@ -29,4 +29,4 @@ const ToogleTemperature = () => {
     );
 };
 
-export default ToogleTemperature;
+export default ToggleTemperature;

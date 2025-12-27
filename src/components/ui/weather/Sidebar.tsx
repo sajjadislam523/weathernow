@@ -24,10 +24,6 @@ const Sidebar = () => {
                 />
             )}
 
-            {/* <div className="flex justify-end">
-                <ToogleTemperature />
-            </div> */}
-
             <div className="text-center">
                 <h2 className="text-xl font-semibold">{location?.name}</h2>
                 <p className="text-sm opacity-70">{location?.country}</p>
